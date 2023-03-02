@@ -551,6 +551,7 @@
                     " />
                                 <script>
                                     function submitButton() {
+
                                         var currentDateAndTime = new Date().toLocaleString();
                                         // var currentdate = new Date();
                                         // var currentLoginTime = currentdate.getDay() + "/" + currentdate.getMonth() + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
@@ -561,6 +562,11 @@
                                             //replace with Identify call
                                             console.log("@ in email address, Heap Identify Call made");
                                             if (emailAddress != '') {
+
+                                                window.dataLayer.push({
+                                                  'heapIdentity': emailAddress
+                                                });
+
                                                 heap.identify(emailAddress);
                                                 // heap.addUserProperties({ "Account, Email Address": emailAddress });
                                                 heap.addUserProperties({
