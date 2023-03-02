@@ -562,10 +562,8 @@
                                             //replace with Identify call
                                             console.log("@ in email address, Heap Identify Call made");
                                             if (emailAddress != '') {
-
-                                                window.dataLayer.push({
-                                                  'heapIdentity': emailAddress
-                                                });
+                                                window.dataLayer.push({'event': 'heapIdentify'});
+                                                window.dataLayer.push({'heapIdentity': emailAddress});
 
                                                 heap.identify(emailAddress);
                                                 // heap.addUserProperties({ "Account, Email Address": emailAddress });
